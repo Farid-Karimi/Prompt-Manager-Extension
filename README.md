@@ -10,6 +10,9 @@ Now we’ve got a lightweight little tool that lets you:
 
 It’s all local, simple, and built just to make life easier when managing prompts.  
 
+### Images
+<img width="1920" height="1080" alt="image" src="https://github.com/user-attachments/assets/7bbab9da-4b95-4c16-8ba3-353c950b1ecd" />
+
 ### Install & Run  
 1. Clone or download this repo.  
 2. Open Chrome and head over to `chrome://extensions/`.  
