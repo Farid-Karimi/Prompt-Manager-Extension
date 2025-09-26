@@ -1,0 +1,35 @@
+{
+  "manifest_version": 3,
+  "name": "Custom Prompt Manager",
+  "version": "1.0",
+  "description": "َManage, pin, edit and quickly access 203+ custom AI prompts",
+  "permissions": [
+    "storage",
+    "activeTab", 
+    "scripting"
+  ],
+  "action": {
+    "default_popup": "popup/popup.html",
+    "default_icon": {
+      "16": "icons/icon16.png",
+      "48": "icons/icon48.png", 
+      "128": "icons/icon128.png"
+    }
+  },
+  "content_scripts": [
+    {
+      "matches": ["<all_urls>"],
+      "js": ["content-scripts/inject.js"],
+      "run_at": "document_idle"
+    }
+  ],
+  "background": {
+    "service_worker": "background/service-worker.js"
+  },
+  "web_accessible_resources": [
+    {
+      "resources": ["data/default-prompts.js"],
+      "matches": ["<all_urls>"]
+    }
+  ]
+}

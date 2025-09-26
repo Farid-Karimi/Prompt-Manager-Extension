@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Prompt Manager</title>
+  <link rel="stylesheet" href="popup.css" />
+</head>
+<body>
+  <div class="container">
+    <header class="header">
+      <h1>Prompt Manager</h1>
+      <button id="addPrompt" aria-label="Add New Prompt" class="btn-primary">+ New</button>
+    </header>
+
+    <section class="search-section">
+      <input
+        type="search"
+        id="searchInput"
+        placeholder="Search prompts..."
+        aria-label="Search prompts"
+      />
+    </section>
+
+    <nav class="filters" role="navigation" aria-label="Filter prompts">
+      <button id="showAll" class="filter-btn active" aria-pressed="true">All</button>
+      <button id="showPinned" class="filter-btn" aria-pressed="false">📌 Pinned</button>
+    </nav>
+
+    <main id="promptsList" class="prompts-list" tabindex="0" aria-live="polite" aria-label="List of prompts">
+      <!-- Prompt items rendered here -->
+    </main>
+
+    <!-- Modal -->
+    <div id="addModal" class="modal hidden" role="dialog" aria-modal="true" aria-labelledby="modalTitle">
+      <div class="modal-content">
+        <h2 id="modalTitle">Add New Prompt</h2>
+        <form id="promptForm">
+          <label for="promptTitle">Title</label>
+          <input type="text" id="promptTitle" name="promptTitle" placeholder="Enter prompt title" required />
+
+          <label for="promptContent">Content</label>
+          <textarea id="promptContent" name="promptContent" rows="5" placeholder="Enter your prompt content" required></textarea>
+
+          <div class="modal-actions">
+            <button type="submit" id="savePrompt" class="btn-primary">Save</button>
+            <button type="button" id="cancelEdit" class="btn-secondary">Cancel</button>
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
+
+  <script src="popup.js"></script>
+</body>
+</html>
